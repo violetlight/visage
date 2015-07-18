@@ -5,4 +5,9 @@ var userSchema = mongoose.Schema({
   password: String
 });
 
+userSchema.methods.validatePassword = function(password) {
+  // bcrypt will go here
+  return true;
+}
+
 module.exports = mongoose.model('User', userSchema);
