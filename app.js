@@ -4,12 +4,22 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+
 var db = require('./db');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+app.use(session({
+    secret: 'foo',
+    store: new MongoStore({
+      mongooseConnection: db.conn
+    })
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
