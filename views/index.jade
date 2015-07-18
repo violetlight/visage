@@ -1,5 +1,14 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .container
+    .row
+      .col-md-6.col-md-offset-3
+        .jumbotron
+          form(action="/sign-in", method="post")
+            h1 Sign in
+            .form-group
+              input.form-control(type="text", name="username", placeholder="username")
+            .form-group
+              input.form-control(type="password", name="password", placeholder="password")
+            button.btn.btn-primary(type="submit") Sign in
