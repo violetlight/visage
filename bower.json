@@ -1,0 +1,24 @@
+{
+  "name": "visage",
+  "version": "0.1.0",
+  "authors": [
+    "J Boyfriend"
+  ],
+  "description": "A private image hosting service",
+  "main": "./bin/www",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "images"
+  ],
+  "license": "MIT",
+  "homepage": "http://visage.limitedhangout.net/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
