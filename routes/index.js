@@ -5,15 +5,17 @@ var passport = require('../passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  if (req.user) res.redirect('/dashboard');
-  res.render('sign-up');
+  if (req.user) { res.redirect('/dashboard'); }
+  else { res.render('sign-up'); }
 });
 
 router.get('/dashboard', function(req, res) {
-  if (!req.user) res.redirect('/');
-  res.render('dashboard', {
-    user: req.user
-  });
+  if (!req.user) { res.redirect('/'); }
+  else {
+    res.render('dashboard', {
+      user: req.user
+    });
+  }
 });
 
 router.get('/dashboard/logout', function(req, res) {
@@ -36,4 +38,5 @@ router.post('/sign-in',
   function(req, res) {
     res.render('dashboard', {user: req.user});
   });
+
 module.exports = router;
