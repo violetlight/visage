@@ -3,9 +3,14 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+/* POST '/users/' - create new User */
+router.post('/', function(req, res) {
+  var user = new User(req.body);
+  user.save(function(err, user) {
+    res.render('dashboard', {
+      user: user
+    });
+  });
 });
 
 module.exports = router;
