@@ -1,12 +1,12 @@
 "use strict";
 
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  if (req.user) { res.redirect('/dashboard'); }
-  else { res.render('sign-up'); }
+router.get("/", function(req, res, next) {
+  if (req.user) { res.redirect("/dashboard"); }
+  else { res.render("sign-up"); }
 });
 
 

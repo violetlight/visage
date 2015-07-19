@@ -1,27 +1,27 @@
 "use strict";
 
-var express = require('express');
+var express = require("express");
 var router = express.Router();
-var passport = require('../passport');
+var passport = require("../passport");
 
-router.get('/', function(req, res) {
-  if (!req.user) { res.redirect('/'); }
+router.get("/", function(req, res) {
+  if (!req.user) { res.redirect("/"); }
   else {
-    res.render('dashboard', {
+    res.render("dashboard", {
       user: req.user
     });
   }
 });
 
-router.get('/logout', function(req, res) {
+router.get("/logout", function(req, res) {
   req.logout();
-  res.redirect('/');
+  res.redirect("/");
 });
 
-router.post('/login',
-  passport.authenticate('local'),
+router.post("/login",
+  passport.authenticate("local"),
   function(req, res) {
-    res.render('dashboard', {user: req.user});
+    res.render("dashboard", {user: req.user});
   });
 
 

@@ -1,7 +1,7 @@
 "use strict";
 
-var mongoose = require('mongoose');
-var bcrypt = require('bcrypt');
+var mongoose = require("mongoose");
+var bcrypt = require("bcrypt");
 
 var userSchema = mongoose.Schema({
   username: String,
@@ -16,11 +16,11 @@ userSchema.methods.verifyPassword = function(candidate, cb) {
     });
 };
 
-userSchema.pre('save', function(next) {
+userSchema.pre("save", function(next) {
     var user = this;
 
     // skip if not modified
-    if (!user.isModified('password')) { return next(); }
+    if (!user.isModified("password")) { return next(); }
 
     bcrypt.genSalt(10, function(err, salt) {
         if (err) { return next(err); }
@@ -32,4 +32,4 @@ userSchema.pre('save', function(next) {
     });
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model("User", userSchema);
