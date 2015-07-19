@@ -1,10 +1,15 @@
 extends layout
 
 block content
-  nav.navbar.navbar-default
+  nav.navbar.navbar-inverse
     .container-fluid
-      a.pull-right.btn.btn-info.btn-lg(href="/dashboard/logout") Log out
+      a.pull-right.btn.btn-success.btn-lg(href="/dashboard/logout") Log out
   .container
     .row
       .col-md-8.col-md-offset-2.text-center
         h1 Welcome, #{user.username}
+    .row
+      .col-md-8.col-md-offset-2
+        form.dropzone.dz-clickable(action="/api/upload")
+          .fallback
+            input(name="files", type="file", multiple)
