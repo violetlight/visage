@@ -6,11 +6,12 @@ var userSchema = mongoose.Schema({
   password: String
 });
 
-userSchema.methods.validatePassword = function(attempt, cb) {
-  bcrypt.compare(attempt, this.password, function(err, isMatch) {
-    if (err) return cb(err);
-    cb(null, isMatch);
-  });
+userSchema.methods.verifyPassword = function(candidate, cb) {
+  bcrypt.compare(candidate, this.password,
+    function(err, isMatch) {
+      if (err) { return cb(err); }
+      cb(null, isMatch);
+    })
 }
 
 userSchema.pre('save', function(next) {
