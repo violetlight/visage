@@ -11,21 +11,6 @@ router.get('/', function(req, res, next) {
   else { res.render('sign-up'); }
 });
 
-router.get('/dashboard', function(req, res) {
-  if (!req.user) { res.redirect('/'); }
-  else {
-    res.render('dashboard', {
-      user: req.user
-    });
-  }
-});
-
-router.get('/dashboard/logout', function(req, res) {
-  req.logout();
-  res.redirect('/');
-});
-
-
 router.post('/', function(req, res) {
   var user = new User(req.body);
   user.save(function(err, user) {

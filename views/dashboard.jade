@@ -1,6 +1,10 @@
 extends layout
 
 block content
+  nav.navbar.navbar-default
+    .container-fluid
+      a.pull-right.btn.btn-info.btn-lg(href="/dashboard/logout") Log out
   .container
-    a.pull-right(href="/dashboard/logout") Log out
-    h1 Welcome, #{user.username}
+    .row
+      .col-md-8.col-md-offset-2.text-center
+        h1 Welcome, #{user.username}
