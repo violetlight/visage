@@ -10,6 +10,4 @@ block content
         h1 Welcome, #{user.username}
     .row
       .col-md-8.col-md-offset-2
-        form.dropzone.dz-clickable(action="/api/upload")
-          .fallback
-            input(name="files", type="file", multiple)
+        form.dropzone.dz-clickable#image-upload-form(action="/api/upload")
