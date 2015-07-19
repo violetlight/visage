@@ -1,4 +1,6 @@
 extends layout
 
 block content
-  h1 #{user.username}
+  .container
+    a.pull-right(href="/dashboard/logout") Log out
+    h1 Welcome, #{user.username}
