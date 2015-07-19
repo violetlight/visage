@@ -1,5 +1,7 @@
 node_modules/
 bower_components/
-*uploads/
 notes.md
 .DS_Store
+
+public/images/uploads/*
+!.gitkeep
