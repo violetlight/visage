@@ -1,8 +1,9 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #F5F4F3 none repeat scroll 0% 0%;
 }
 
-a {
-  color: #00B7FF;
+.dropzone {
+  border: 2px dashed rgba(0,0,0,0.3);
+  border-radius: 5px;
+  background: #FFF none repeat scroll 0% 0%
 }
