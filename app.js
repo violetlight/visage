@@ -13,6 +13,7 @@ var passport = require('./passport');
 var db = require('./db');
 
 var routes = require('./routes/index');
+var api = require('./routes/api');
 var dashboard = require('./routes/dashboard');
 var users = require('./routes/users');
 
@@ -42,6 +43,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', routes);
+app.use('/api', api);
 app.use('/dashboard', dashboard);
 app.use('/users', users);
 
