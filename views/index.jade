@@ -3,12 +3,13 @@ extends layout
 block content
   nav.navbar.navbar-inverse
     .container-fluid
-      a.pull-right.btn.btn-success.btn-lg(href="/dashboard/logout") Log out
+      if user
+        a.pull-right.btn.btn-success.btn-lg(href="/logout") Log out
+      else
+        a.pull-right.btn.btn-success.btn-lg(href="/sign") Log in
   .container
     .row
       .col-md-8.col-md-offset-2
         form.dropzone.dz-clickable#image-upload-form(action="/api/image")
     .row
       .col-md-8.col-md-offset-2.text-center
-        for image in user.uploadedImages
-          p #{image}

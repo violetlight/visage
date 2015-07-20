@@ -7,9 +7,7 @@ var router = express.Router();
 router.post("/", function(req, res) {
   var user = new User(req.body);
   user.save(function(err, user) {
-    res.render("dashboard", {
-      user: user
-    });
+    res.redirect("/");
   });
 });
 
