@@ -8,6 +8,10 @@ body {
   background: #FFF none repeat scroll 0% 0%
 }
 
+.navbar {
+  box-shadow: 0px 0px 10px 1px #000;
+}
+
 .nav-link {
   color: #FFF;
   font-size: 2em;
