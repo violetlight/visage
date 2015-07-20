@@ -2,6 +2,10 @@ body {
   background: #F5F4F3 none repeat scroll 0% 0%;
 }
 
+.shadow-header {
+  text-shadow: 1px 1px 2px #222;
+}
+
 .dropzone {
   border: 2px dashed rgba(0,0,0,0.3);
   border-radius: 5px;
@@ -16,4 +20,15 @@ body {
   color: #FFF;
   font-size: 2em;
   margin-right: .5em;
+}
+
+.panel-rounded {
+  padding: 1em;
+  border-radius: 5px;
+  background: #333 none repeat scroll 0% 0%;
+  box-shadow: 0px 0px 10px 3px rgba(0,0,0,0.2);
+}
+
+.panel-rounded h1 {
+  color: #F5F4F3;
 }
