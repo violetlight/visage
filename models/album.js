@@ -4,7 +4,6 @@ var mongoose = require("mongoose");
 
 var albumSchema = mongoose.Schema({
   hash: String,
-  url: String,
   private: {
     type:Boolean,
     default: false
