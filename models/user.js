@@ -5,7 +5,15 @@ var bcrypt = require("bcrypt");
 
 var userSchema = mongoose.Schema({
   username: String,
-  password: String
+  password: String,
+  uploadedImages: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Image"
+  }],
+  uploadedAlbums: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Album"
+  }]
 });
 
 userSchema.methods.verifyPassword = function(candidate, cb) {
