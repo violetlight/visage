@@ -4,6 +4,7 @@ var mongoose = require("mongoose");
 
 var imageSchema = mongoose.Schema({
   filepath: String,
+  hash: String,
   private: {
     type:Boolean,
     default: false
