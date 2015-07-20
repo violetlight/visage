@@ -13,7 +13,7 @@ var storage = multer.diskStorage({
 });
 var upload = multer({ storage: storage });
 
-
+/* POST '/image' - upload a single image file and create a new Image in db */
 router.post("/image", upload.single("file"), function(req, res) {
   // create new Image here and save it
   var fixedPath = req.file.path.replace("public/", "");
