@@ -7,3 +7,9 @@ body {
   border-radius: 5px;
   background: #FFF none repeat scroll 0% 0%
 }
+
+.nav-link {
+  color: #FFF;
+  font-size: 2em;
+  margin-right: .5em;
+}

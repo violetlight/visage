@@ -3,13 +3,19 @@ extends layout
 block content
   nav.navbar.navbar-inverse
     .container-fluid
-      if user
-        a.pull-right.btn.btn-success.btn-lg(href="/logout") Log out
-      else
-        a.pull-right.btn.btn-success.btn-lg(href="/sign") Log in
+      .btn-toolbar
+        if user
+          a.pull-left.btn.btn-info.btn-lg(href="/settings") Upload Image
+          a.pull-left.btn.btn-info.btn-lg(href="/settings") Create Album
+
+          a.pull-right.btn.btn-success.btn-lg(href="/logout") Log out
+          a.pull-right.nav-link(href="/settings") #{user.username}
+        else
+          a.pull-right.btn.btn-success.btn-lg(href="/sign") Log in
   .container
+    .row
+      .col-md-8.col-md-offset-2.text-center
+        h1 #{images.length} images uploaded.
     .row
       .col-md-8.col-md-offset-2
         form.dropzone.dz-clickable#image-upload-form(action="/api/image")
-    .row
-      .col-md-8.col-md-offset-2.text-center
