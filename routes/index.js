@@ -26,17 +26,19 @@ router.get("/sign", function(req, res) {
   res.render("sign-up");
 });
 
-
+var Image = require('../models/image');
 /* GET home page. */
 router.use("/", function(req, res) {
-  if (req.user) {
-    res.render("index", {
-      user: req.user
-    });
-  }
-  else {
-    res.render("index");
-  }
+  var ctx = {};
+  Image.find({}, function(err, images) {
+    ctx.images = images;
+    if (req.user) {
+      ctx.user = req.user;
+    }
+    res.render("index", ctx);
+  });
+
+
 });
 
 module.exports = router;
