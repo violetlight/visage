@@ -6,8 +6,9 @@ block content
       a.pull-right.btn.btn-success.btn-lg(href="/dashboard/logout") Log out
   .container
     .row
-      .col-md-8.col-md-offset-2.text-center
-        h1 Welcome, #{user.username}
-    .row
       .col-md-8.col-md-offset-2
-        form.dropzone.dz-clickable#image-upload-form(action="/api/upload")
+        form.dropzone.dz-clickable#image-upload-form(action="/api/image")
+    .row
+      .col-md-8.col-md-offset-2.text-center
+        for image in user.uploadedImages
+          p #{image}
