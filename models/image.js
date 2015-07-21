@@ -2,6 +2,8 @@
 
 var mongoose = require("mongoose");
 
+var generateAAA = require("adjective-adjective-animal");
+
 var imageSchema = mongoose.Schema({
   filepath: String,
   hash: String,
@@ -14,5 +16,15 @@ var imageSchema = mongoose.Schema({
     ref: "User"
   }]
 });
+
+imageSchema.pre("save", function(next) {
+    var image = this;
+    generateAAA().then(function(aaa) {
+      // aaa is an adjective-adjective-animal "hash"
+      image.hash = aaa;
+      next();
+    });
+});
+
 
 module.exports = mongoose.model("Image", imageSchema);
