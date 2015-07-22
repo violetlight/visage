@@ -1,8 +1,8 @@
 extends layout
 
 block content
-  nav.navbar.navbar-inverse
-    .container-fluid
+  .container-fluid  
+    nav.navbar.navbar-inverse
       .btn-toolbar
         if user
           a.pull-left.btn.btn-info.btn-lg(href="/settings") Upload Image
@@ -12,12 +12,14 @@ block content
           a.pull-right.nav-link(href="/settings") #{user.username}
         else
           a.pull-right.btn.btn-success.btn-lg(href="/sign") Log in
-  .container.panel-rounded
     .row
       .col-md-6.col-md-offset-3.text-center
-        .container
-          .row
-        h1 #{images.length} images uploaded.
+        h4 #{images.length} images uploaded.
+      .col-md-8.col-md-offset-2.panel-rounded
+        for image in images
+          .thumb-sm
+            a.thumblink(href="/i/#{image.hash}")
+              img(src="/#{image.filepath}")
     if user
       .row
         .col-md-6.col-md-offset-3

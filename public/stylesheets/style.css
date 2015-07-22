@@ -2,9 +2,7 @@ body {
   background: #F5F4F3 none repeat scroll 0% 0%;
 }
 
-.shadow-header {
-  text-shadow: 1px 1px 2px #222;
-}
+
 
 .dropzone {
   border: 2px dashed rgba(0,0,0,0.3);
@@ -31,4 +29,42 @@ body {
 
 .panel-rounded h1 {
   color: #F5F4F3;
+}
+
+.shadow-header {
+  text-shadow: 1px 1px 2px #222;
+}
+
+.thumb-sm, .thumb-sm img {
+  width: 180px;
+  height: 180px;
+}
+
+.thumb-sm {
+  line-height: 0px;
+  display: inline-block;
+  margin: 4px 2px;
+  padding: 0px;
+  position: relative;
+  border: 2px solid #444;
+}
+
+.thumb-sm .thumblink {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
+.thumb-sm img {
+  outline-offset: -1px;
+  outline: 1px solid #121211;
+  border: 0px none;
+}
+
+.thumb-lg {
+  width: 450px;
+  height: 450px;
 }
