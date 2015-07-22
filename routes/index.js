@@ -26,7 +26,17 @@ router.get("/sign", function(req, res) {
   res.render("sign-up");
 });
 
-var Image = require('../models/image');
+var Image = require("../models/image");
+
+router.get("/i/:hash", function(req, res) {
+  Image.findOne({hash: req.params.hash},
+    function(err, image) {
+      if (err) { res.send(err); }
+      res.render("image", {image: image});
+    }
+  );
+});
+
 /* GET home page. */
 router.use("/", function(req, res) {
   var ctx = {};
