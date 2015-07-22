@@ -26,9 +26,13 @@ router.get("/sign", function(req, res) {
   res.render("sign-up");
 });
 
+router.get("/account", function(req, res) {
+  res.render("account-settings", {user:req.user});
+});
+
 var Image = require("../models/image");
 
-/* GET '/i/:hash' - view individual image */ 
+/* GET '/i/:hash' - view individual image */
 router.get("/i/:hash", function(req, res) {
   Image.findOne({hash: req.params.hash},
     function(err, image) {
@@ -39,7 +43,7 @@ router.get("/i/:hash", function(req, res) {
 });
 
 /* GET home page. */
-router.use("/", function(req, res) {
+router.get("/", function(req, res) {
   var ctx = {};
   Image.find({}, function(err, images) {
     ctx.images = images;
