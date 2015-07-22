@@ -5,8 +5,8 @@ block content
     nav.navbar.navbar-inverse
       .btn-toolbar
         if user
-          a.pull-left.btn.btn-info.btn-lg(href="/settings", data-toggle="modal", data-target="#upload-image-modal") Upload Image
-          a.pull-left.btn.btn-info.btn-lg(href="/settings") Create Album
+          a.pull-left.btn.btn-info.btn-lg(href="#", data-toggle="modal", data-target="#upload-image-modal") Upload Image
+          a.pull-left.btn.btn-info.btn-lg(href="#") Create Album
 
           a.pull-right.btn.btn-success.btn-lg(href="/logout") Log out
           a.pull-right.nav-link(href="/account") #{user.username}
