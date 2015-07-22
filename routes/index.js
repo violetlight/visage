@@ -28,6 +28,7 @@ router.get("/sign", function(req, res) {
 
 var Image = require("../models/image");
 
+/* GET '/i/:hash' - view individual image */ 
 router.get("/i/:hash", function(req, res) {
   Image.findOne({hash: req.params.hash},
     function(err, image) {
