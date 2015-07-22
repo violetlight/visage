@@ -5,7 +5,7 @@ block content
     nav.navbar.navbar-inverse
       .btn-toolbar
         if user
-          a.pull-left.btn.btn-info.btn-lg(href="/settings") Upload Image
+          a.pull-left.btn.btn-info.btn-lg(href="/settings", data-toggle="modal", data-target="#upload-image-modal") Upload Image
           a.pull-left.btn.btn-info.btn-lg(href="/settings") Create Album
 
           a.pull-right.btn.btn-success.btn-lg(href="/logout") Log out
@@ -23,4 +23,14 @@ block content
     if user
       .row
         .col-md-6.col-md-offset-3
+
+
+  .modal.fade#upload-image-modal(tabindex="-1")
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type="button", data-dismiss="modal")
+            span &times;
+          h3 upload image
+        .modal-body
           form.dropzone.dz-clickable#image-upload-form(action="/api/image")
