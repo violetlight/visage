@@ -19,7 +19,7 @@ block content
         for image in images
           .thumb-sm
             a.thumblink(href="/i/#{image.hash}")
-              img(src="/#{image.filepath}")
+              img.img-responsive(src="/#{image.filepath}")
     if user
       .row
         .col-md-6.col-md-offset-3
