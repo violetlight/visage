@@ -8,12 +8,12 @@ var debugFunc = function(file, done) {
 
 var sendingCb = function(file, xhr, formData) {
   formData.append("name", "bullshit");
-}
+};
 
 var replaceOldWithNew = function(file) {
   this.removeAllFiles();
   this.addFile(file);
-}
+};
 
 var init = function() {
   var submitButton = document.querySelector("#submit-image"),
@@ -22,8 +22,7 @@ var init = function() {
     submitButton.addEventListener("click", function() {
       thisDropzone.processQueue();
     });
-
-}
+};
 
 
 /* The form's id is actually `image-upload-form`, but
